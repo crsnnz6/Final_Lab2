@@ -40,3 +40,4 @@ Route::get('category/restore/{id}', [CategoryController::class, 'restore']);
 Route::get('category/delete/{id}', [CategoryController::class, 'delete']);
 
 Route::get('brands', [BrandController::class, 'index'])->name('brands');
+Route::post('/brand/add', [BrandController::class, 'add'])->name('add.brand');

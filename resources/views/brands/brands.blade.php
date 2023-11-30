@@ -38,13 +38,13 @@
                             <th scope="col">Action</th>
                         </tr>
                     <tbody>
-                    @foreach($brands as $brand)
+                        @foreach($brands as $brand)
                         <tr>
                             <td scope="cole">{{$brand->id}}</td>
                             <td scope="cole">{{$brand->brand_name}}</td>
-                            <td scope="cole">This is for the image</td>
+                            <td scope="cole"><img src="{{asset($brand->brand_image)}}" width="70px" height="40px" alt=""></td>
                             <td scope="cole">{{$brand->created_at->diffForHumans()}}</td>
-                            <td scope="cole">{{$category->user_id}}</td>
+                            <td scope="cole">{{$brand->user_id}}</td>
                             <td scope="cole">
                                 <a href="" class="btn btn-info">Edit</a>
                                 <a href="" class="btn btn-danger">Remove</a>
@@ -63,13 +63,19 @@
                                     Add New Brand
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="POST">
+                                    <form action="{{route('add.brand')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <label for="CategoryName" class="form-label">Brand Name</label>
                                             <input type="text" name="brand_name" class="form-control">
+                                            @error('brand_name')
+                                            <div class="small text-danger mt-2">{{ $message }}</div>
+                                            @enderror
                                             <label for="CategoryName" class="form-label">Brand Image</label>
                                             <input type="file" name="brand_image" class="form-control">
+                                            @error('brand_image')
+                                            <div class="small text-danger mt-2">{{ $message }}</div>
+                                            @enderror
                                             <input type="submit" class="btn btn-primary mt-3" value="Submit" />
                                         </div>
                                     </form>

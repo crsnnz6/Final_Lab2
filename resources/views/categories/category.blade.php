@@ -13,7 +13,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Job Offerings Admin Page') }}
+            {{ __('Manage Categories') }}
         </h2>
     </x-slot>
 
@@ -31,7 +31,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Job Name</th>
+                            <th scope="col">Category Name</th>
                             <th scope="col">Created At</th>
                             <th scope="col">User ID</th>
                             <th scope="col">Action</th>
@@ -58,7 +58,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Job Name</th>
+                            <th scope="col">Category Name</th>
                             <th scope="col">Created At</th>
                             <th scope="col">Deleted At</th>
                             <th scope="col">User ID</th>
